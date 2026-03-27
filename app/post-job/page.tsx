@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import {
     Briefcase, Building2, MapPin, DollarSign, Calendar,
-    Globe, Mail, CheckCircle2, ChevronRight, Loader2
+    Globe, Mail, CheckCircle2, ChevronRight, Loader2,GraduationCap
 } from "lucide-react";
 import {
     jobTypeLabels, jobSiteLabels, experienceLevelLabels,
