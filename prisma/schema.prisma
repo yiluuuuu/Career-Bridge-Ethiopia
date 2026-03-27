@@ -1,0 +1,114 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum JobType {
+  FULL_TIME
+  PART_TIME
+  FREELANCE
+  CONTRACTUAL
+  VOLUNTEER
+  INTERN_PAID
+  INTERN_UNPAID
+}
+
+enum JobSite {
+  ON_SITE
+  REMOTE
+  HYBRID
+}
+
+enum ExperienceLevel {
+  ENTRY
+  JUNIOR
+  INTERMEDIATE
+  SENIOR
+  EXPERT
+}
+
+enum EducationLevel {
+  TVET
+  SECONDARY
+  CERTIFICATE
+  DIPLOMA
+  BACHELOR
+  MASTER
+  PHD
+  NOT_REQUIRED
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  ANY
+}
+
+model Category {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  slug      String   @unique
+  icon      String   @default("briefcase")
+  color     String   @default("#0ea5e9")
+  jobs      Job[]
+  createdAt DateTime @default(now())
+}
+
+model Company {
+  id      String  @id @default(cuid())
+  name    String  @unique
+  logo    String?
+  website String?
+  jobs    Job[]
+}
+
+model Job {
+  id             String          @id @default(cuid())
+  title          String
+  description    String          @db.Text
+  requirements   String          @db.Text
+  salary         String?
+  deadline       DateTime?
+  applyUrl       String?
+  applyEmail     String?
+  jobType        JobType         @default(FULL_TIME)
+  jobSite        JobSite         @default(ON_SITE)
+  experienceLevel ExperienceLevel @default(ENTRY)
+  educationLevel EducationLevel  @default(BACHELOR)
+  gender         Gender          @default(ANY)
+  location       String
+  isActive       Boolean         @default(true)
+  isFeatured     Boolean         @default(false)
+  views          Int             @default(0)
+  category       Category        @relation(fields: [categoryId], references: [id])
+  categoryId     String
+  company        Company         @relation(fields: [companyId], references: [id])
+  companyId      String
+  savedBy        SavedJob[]
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+
+  @@index([categoryId])
+  @@index([location])
+  @@index([jobType])
+  @@index([jobSite])
+  @@index([isActive])
+  @@index([createdAt])
+}
+
+model SavedJob {
+  id        String   @id @default(cuid())
+  job       Job      @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  jobId     String
+  sessionId String
+  createdAt DateTime @default(now())
+
+  @@unique([jobId, sessionId])
+}
