@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/salary-calculator/layout,_N_T_/salary-calculator/page,_N_T_/salary-calculator"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/salary-calculator/__PAGE__",
+    "/salary-calculator",
+    "/_index",
+    "/_head"
+  ]
+}

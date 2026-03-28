@@ -1,0 +1,14 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/categories/route": "/api/categories",
+  "/api/jobs/[id]/route": "/api/jobs/[id]",
+  "/api/jobs/route": "/api/jobs",
+  "/banking-jobs/page": "/banking-jobs",
+  "/jobs/[id]/page": "/jobs/[id]",
+  "/jobs/page": "/jobs",
+  "/ngo-jobs/page": "/ngo-jobs",
+  "/page": "/",
+  "/post-job/page": "/post-job",
+  "/salary-calculator/page": "/salary-calculator"
+}

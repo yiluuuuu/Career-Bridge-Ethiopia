@@ -1,0 +1,13 @@
+var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/salary-calculator/page.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0azjow4._.js")
+R.c("server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_040m4-y.js")
+R.c("server/chunks/ssr/[root-of-the-server]__05mqjr2._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0ngiev5._.js")
+R.c("server/chunks/ssr/_0jh6~ws._.js")
+R.c("server/chunks/ssr/node_modules_next_dist_client_components_0inhx6q._.js")
+R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_forbidden_0ghu-f7.js")
+R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_unauthorized_0cjv-23.js")
+R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_global-error_0lgvd_..js")
+R.c("server/chunks/ssr/_next-internal_server_app_salary-calculator_page_actions_0-qx4zh.js")
+R.m(68871)
+module.exports=R.m(68871).exports
