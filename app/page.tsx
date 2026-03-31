@@ -50,7 +50,7 @@ export default async function HomePage() {
                             🇪🇹 Ethiopia&apos;s #1 Job Portal
                         </span>
                         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-3">
-                            Find Your Dream Job
+                            Find Your Dream Job Now
                             <span className="block text-sky-200">in Ethiopia</span>
                         </h1>
                         <p className="text-sky-100 text-base sm:text-lg max-w-xl mx-auto">
